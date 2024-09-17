@@ -14,25 +14,17 @@ class User(Base):
     def telegram_id_exists(cls, session, telegram_id):
         return session.query(cls).filter(cls.telegram_id == telegram_id).first() is not None
 
-class Tag(Base):
-    __tablename__ = "tag"
-    tag_id = Column(Integer, primary_key=True, autoincrement=True)
-    tag_text = Column(Text)
 
 class Question(Base):
     __tablename__ = 'questions'
     question_id = Column(Integer, primary_key=True, autoincrement=True)
     question_text = Column(Text)
-    tag_question = Column(Integer, ForeignKey("tag.tag_id"))
-
-    tag = relationship("Tag")
 
 class UserQuestion(Base):
     __tablename__ = 'user_questions'
     user_id = Column(Integer, ForeignKey('users.user_id'), primary_key=True)
     question_id = Column(Integer, ForeignKey('questions.question_id'), primary_key=True)
     asked = Column(Boolean, default=False)
-    rating = Column(Integer,default=50)
     
 
 
