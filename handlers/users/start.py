@@ -15,7 +15,6 @@ text_to_start_command = '''Здравствуйте! Я — Орешек, ваш
 
 @dp.message(Command("start"))
 async def start_command(message: types.Message):
-    await message.delete()
     user_channel_status = await bot.get_chat_member(chat_id='@macsimomg', user_id=message.from_user.id)
     if user_channel_status.status != 'left':
         await message.answer(text_to_start_command, reply_markup=random_questions_F_key())
@@ -25,7 +24,6 @@ async def start_command(message: types.Message):
 
 @dp.callback_query(F.data == "new_start")
 async def new_start_funck_key(callback: types.CallbackQuery):
-    await callback.message.delete()
     user_channel_status = await bot.get_chat_member(chat_id='@macsimomg', user_id=callback.from_user.id)
     if user_channel_status.status != 'left':
         await callback.message.answer('Спасибо за подписку!')

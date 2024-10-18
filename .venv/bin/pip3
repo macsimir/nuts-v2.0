@@ -1,4 +1,4 @@
-#!/home/macsim/nuts2.0/.venv/bin/python
+#!/home/macsim/nuts-v2.0/.venv/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys

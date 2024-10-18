@@ -17,7 +17,6 @@ def get_random_tag(session):
 
 @dp.callback_query(F.data == "random_questions_F_key")
 async def random_questions_F_funck(callback: types.CallbackQuery):
-    await callback.message.delete()
     session = Session() 
     user_id = callback.message.chat.id
     user = get_user_by_telegram_id(telegram_id=user_id, session=session)
