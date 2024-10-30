@@ -34,7 +34,6 @@ async def new_start_funck_key(callback: types.CallbackQuery):
 
 @dp.callback_query(F.data == "help_F_key")
 async def help_command(callback: types.CallbackQuery):
-    await callback.message.delete()
 
     await callback.message.answer('''Чтобы начать использовать бота, выполните следующие шаги:
     1.Создайте группу 👥
@@ -47,7 +46,6 @@ async def help_command(callback: types.CallbackQuery):
 
 @dp.callback_query(F.data == "back_to_start_F_key")
 async def back_to_start_F_key_command(callback: types.CallbackQuery):
-    await callback.message.delete()
     user_channel_status = await bot.get_chat_member(chat_id='@macsimomg', user_id=callback.message.from_user.id)
     if user_channel_status.status != 'left':
         await callback.message.answer(text_to_start_command, reply_markup=random_questions_F_key())

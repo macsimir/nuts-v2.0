@@ -3,7 +3,7 @@ from sqlalchemy.orm import sessionmaker
 from database import Base, Tag  # Импортируйте ваши модели
 
 # Создайте подключение к базе данных
-engine = create_engine('sqlite:///db/DATEBASE.db')  # Замените на вашу строку подключения
+engine = create_engine('sqlite:///DATEBASE.db')  # Замените на вашу строку подключения
 Base.metadata.create_all(engine)  # Создайте все таблицы, если они еще не созданы
 
 Session = sessionmaker(bind=engine)
@@ -20,7 +20,8 @@ tags_list = [
     "Образование",
     "Культура",
     "Дружба",
-    "Любовь",    
+    "Любовь",
+    
 ]
 
 # Создание и добавление тегов в сессию

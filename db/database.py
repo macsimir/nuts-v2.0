@@ -38,7 +38,7 @@ class Tag(Base):
 
 
 
-engine = create_engine('sqlite:///db/DATEBASE.db')
+engine = create_engine('sqlite:///DATEBASE.db')
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 

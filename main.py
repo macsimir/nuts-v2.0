@@ -11,12 +11,3 @@ async def main():
 if __name__ == "__main__":
     print("Бот запущен и готов к работе")
     asyncio.run(main())
-
-
-# echo "# nuts-v2.0" >> README.md
-# git init
-# git add README.md
-# git commit -m "first commit"
-# git branch -M main
-# git remote add origin https://github.com/macsimir/nuts-v2.0.git
-# git push -u origin main
